@@ -17,26 +17,11 @@ closeMenu.addEventListener('click', () => {
 
 /* ====== REMOVE MENU ====== */
 const navLink = document.querySelectorAll('.nav_link')
-const contactForm = document.getElementById('contact-form')
 
 function linkAction() {
     navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
-
-contactForm.addEventListener('submit', event => {
-    event.preventDefault()
-
-    const formData = new FormData(contactForm)
-    const name = formData.get('name')
-    const email = formData.get('email')
-    const project = formData.get('project')
-    const message = formData.get('message')
-    const subject = `Portfolio enquiry: ${project}`
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`
-
-    window.location.href = `mailto:genisyscybertech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-})
 
 /* ====== SCROLL SECTION ACTIVE LINK ====== */
 const sections = document.querySelectorAll('section[id]')
